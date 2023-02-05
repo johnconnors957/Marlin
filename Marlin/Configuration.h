@@ -833,7 +833,7 @@
  * Note: For Bowden Extruders make this large enough to allow load/unload.
  */
 #define PREVENT_LENGTHY_EXTRUDE
-#define EXTRUDE_MAXLENGTH 600
+#define EXTRUDE_MAXLENGTH 60 //JTC was 600 60 for direct drive 600 boden
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -1491,11 +1491,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 40, -8, 0 }  //JTC
+#define NOZZLE_TO_PROBE_OFFSET { 20, -8, 0 }  //JTC 0 on corexy
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 35 //JTC
+#define PROBING_MARGIN 0 //JTC
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (160*60) //JTC
@@ -2043,7 +2043,7 @@
 #define LCD_BED_TRAMMING
 
 #if ENABLED(LCD_BED_TRAMMING)
-  #define BED_TRAMMING_INSET_LFRB { 30, 30, 30, 30 } // (mm) Left, Front, Right, Back insets
+  #define BED_TRAMMING_INSET_LFRB { 40, 40, 40, 40 } // (mm) Left, Front, Right, Back insets //jtc
   #define BED_TRAMMING_HEIGHT      0.0        // (mm) Z height of nozzle at leveling points
   #define BED_TRAMMING_Z_HOP       4.0        // (mm) Z height of nozzle between leveling points
   //#define BED_TRAMMING_INCLUDE_CENTER       // Move to the center after the last corner
@@ -2109,7 +2109,7 @@
 #if ENABLED(Z_SAFE_HOMING)
   //#define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
   //#define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
-  #define Z_SAFE_HOMING_X_POINT 150  // X point for Z homing //JTC
+  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing //JTC
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
 #endif
 
