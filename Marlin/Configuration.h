@@ -38,7 +38,8 @@
  * Advanced settings can be found in Configuration_adv.h
  */
 #define CONFIGURATION_H_VERSION 02010200
-
+//my selections for removing warnings
+#define DIAG_JUMPERS_REMOVED
 //===========================================================================
 //============================= Getting Started =============================
 //===========================================================================
@@ -2114,8 +2115,8 @@
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-//#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (4*60) }
-#define HOMING_FEEDRATE_MM_M { (150*60), (150*60), (10*60) } //JTC
+#define HOMING_FEEDRATE_MM_M { (20*60), (20*60), (4*60) } //1200mm xy, 240 z //JTC
+//#define HOMING_FEEDRATE_MM_M { (150*60), (150*60), (10*60) } // 9000 x y, 600 z //JTC
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
 
